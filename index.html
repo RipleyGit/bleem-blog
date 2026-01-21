@@ -13,7 +13,10 @@
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <!-- giscus评论  -->
   <link rel="stylesheet" href="https://unpkg.com/docsify-giscus@1.0.0/dist/giscus.css">
-
+  <!-- 固定导航栏 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/LIGMATV/docsify-navbar-fixed/navbar-fixed.css">
+  <!-- 页面顶部路径栏 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/breadcrumb.min.css">
 </head>
 
 <body>
@@ -25,33 +28,35 @@
       //文档加载的根路径，可以是二级路径或者是其他域名的路径
       basePath: "/docs/",
       //如果该选项设为 true ，那么链接会使用相对路径
-      relativePath: true,
+      // relativePath: true,
       //加载自定义侧边栏，参考多页文档。设置为 true 后会加载 _sidebar.md 文件，也可以自定义加载的文件名。
-    //   loadSidebar: true,
+      loadSidebar: true,
       loadSidebar: '../_sidebar.md',//加载自定义侧边栏，参考多页文档。设置为 true 后会加载 _sidebar.md 文件，也可以自定义加载的文件名。
-      autoHeader: true,
+      // alias: {
+      //   '/.*/_sidebar.md': '/_sidebar.md'
+      // },
+      // autoHeader: true,
       //自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能。默认0
       subMaxLevel: 1,
       sidebarDisplayLevel: 0,
       //切换页面后是否自动跳转到页面顶部。
-      auto2top: true,
+      // auto2top: true,
       //加载自定义导航栏，参考定制导航栏 了解用法。设置为 true 后会加载 _navbar.md 文件，也可以自定义加载的文件名
       loadNavbar: true,
-      //loadNavbar: 'nav.md',//加载 指定文档为导航栏
+      loadNavbar: '../_navbar.md',//加载 指定文档为导航栏
       //小屏设备下合并导航栏到侧边栏
       mergeNavbar: true,
       //让你的内容页在滚动到指定的锚点时，距离页面顶部有一定空间。当你使用 固定页头 布局时这个选项很有用，可以让你的锚点对齐标题栏。
       topMargin: 90,
+      homepage: '../README.md',
       // 搜索配置
       search: {
         depth: 4,
         noData: {
-          '/cn/': '没有结果',
-          '/': 'No results'
+          '/': '没有结果'
         },
         paths: 'auto',//'auto',
         placeholder: {
-          '/cn/': '搜索',
           '/': 'Search'
         }
       },
@@ -60,7 +65,7 @@
         repoId: "R_kgDOQ9WfZw",
         category: "Announcements",
         categoryId: "DIC_kwDOQ9WfZ84C1LqN",
-        mapping: "title",
+        mapping: "url",
         reactionsEnabled: "0",
         strict: "1",
         emitMetadata: "0",
@@ -80,13 +85,13 @@
         color: 'rgb(90,90,90)',
         language: 'chinese'
       },
-      beian: {
-        ICP: "浙ICP备2025219628号",
-        NISMSP: {
-          number: "",
-          url: "",
-          id: ""
-        },
+      breadcrumb: {
+        showHome: true,
+        homeText: 'Home',
+        separator: ' &rsaquo; ',
+        casing: 'capitalize',
+        linkColor: 'var(--theme-color, #42b983)',
+        size: 'small'
       },
     }
   </script>
@@ -108,8 +113,10 @@
   <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
   <!-- 文字计数 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <!-- 备案插件 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-beian@latest/dist/beian.min.js"></script>
+  <!-- 页面顶部路径栏 -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-breadcrumb@latest/dist/index.min.js"></script>
+  <!-- 明暗主题 -->
+  <script src="//cdn.jsdelivr.net/gh/LIGMATV/docsify-dark-switcher@latest/docsify-dark-switcher.js"></script>
 </body>
 
 </html>
